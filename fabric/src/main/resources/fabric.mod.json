@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "ChillestOrange",
+    "Mayank Sharma"
+  ],
+  "contact": {
+    "homepage": "https://github.com/chillestorange/gamesync",
+    "sources": "https://github.com/chillestorange/gamesync",
+    "issues": "https://github.com/chillestorange/gamesync/issues"
+  },
+  "license": "${mod_license}",
+  "icon": "assets/gamesync/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.chillestorange.fabric.GameSyncClientFabric"
+    ],
+    "modmenu": [
+      "io.github.chillestorange.fabric.compat.GameSyncModMenu"
+    ]
+  },
+  "suggests": {
+    "modmenu": "*"
+  },
+  "mixins": [
+    "gamesync.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${fabric_loader_version}",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

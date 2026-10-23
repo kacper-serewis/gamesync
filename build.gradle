@@ -1,0 +1,19 @@
+// Platform-specific plugins (Loom, ModDevGradle) are applied in their respective subprojects.
+subprojects {
+    version = mod_version
+    group = maven_group
+
+    tasks.withType(JavaCompile).configureEach {
+        options.release = libs.versions.java.get().toInteger()
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        mavenCentral()
+        maven { name = 'Mojang';       url = 'https://libraries.minecraft.net/' }
+        maven { name = 'Fabric';       url = 'https://maven.fabricmc.net/' }
+        maven { name = 'NeoForged';    url = 'https://maven.neoforged.net/releases' }
+        maven { name = 'Xander Maven'; url = 'https://maven.isxander.dev/releases' }
+        maven { name = 'Terraformers'; url = 'https://maven.terraformersmc.com/' }
+    }
+}
